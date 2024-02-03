@@ -4,7 +4,7 @@ public class Patterns
 {
     public static void main(String[] args)
     {
-        seven();
+        nine();
     }
 
     /**
@@ -160,5 +160,82 @@ public class Patterns
         }
     }
 
+    /**
+     *         *
+     *        ***
+     *       *****
+     *      *******
+     *     *********
+     **/
+    public static void eight()
+    {
+        int N = 5;
+        for (int row = 1; row <= N; row++)
+        {
+            for (int spaces = row; spaces <= N; spaces++)
+            {
+                System.out.print(" ");
+            }
+            for (int stars = 1; stars <= 2 * row - 1; stars++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+
+
+    /**
+     *     *********
+     *      *******
+     *       *****
+     *        ***
+     *         *
+     **/
+    public static void nine()
+    {
+        int N = 6;
+        for (int row = N; row >= 1; row--)
+        {
+            for (int space = 0; space <= (N - row); space++)
+            {
+                System.out.print(" ");
+            }
+
+            for (int stars = 1; stars <= 2 * row - 1; stars++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *          *
+     *         * *
+     *        * * *
+     *       * * * *
+     *      * * * * *
+     **/
+    public static void ten()
+    {
+        int N = 6;
+
+        for (int row = 1; row <= N; row++)
+        {
+            for (int spaces = 1  ; spaces <= N - row; spaces++)
+            {
+                System.out.print(" ");
+            }
+
+            for (int column = 1; column <= row; column++)
+            {
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+    }
 
 }
