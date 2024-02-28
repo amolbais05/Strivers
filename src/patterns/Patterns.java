@@ -4,7 +4,7 @@ public class Patterns
 {
     public static void main(String[] args)
     {
-        nine();
+        eleven();
     }
 
     /**
@@ -237,5 +237,34 @@ public class Patterns
             System.out.println();
         }
     }
+
+    /**
+     *      * * * * *
+     *       * * * *
+     *        * * *
+     *         * *
+     *          *
+     *          *
+     * */
+    public static void eleven()
+    {
+        int N = 6;
+
+        for (int row = N; row >= 1; row--)
+        {
+            for (int spaces = 0  ; spaces <= N - row; spaces++)
+            {
+                System.out.print(" ");
+            }
+
+            for (int column = row; column >= 1; column--)
+            {
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+    }
+
 
 }
