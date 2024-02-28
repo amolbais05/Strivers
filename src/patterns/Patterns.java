@@ -4,7 +4,7 @@ public class Patterns
 {
     public static void main(String[] args)
     {
-        eleven();
+        tweleve();
     }
 
     /**
@@ -264,6 +264,54 @@ public class Patterns
 
             System.out.println();
         }
+    }
+
+    /**
+     *      * * * * *
+     *       * * * *
+     *        * * *
+     *         * *
+     *          *
+     *          *
+     *         * *
+     *        * * *
+     *       * * * *
+     *      * * * * *
+     * */
+
+    public static void tweleve()
+    {
+        int N = 6;
+
+        for (int row = N; row >= 1; row--)
+        {
+            for (int spaces = 0  ; spaces <= N - row; spaces++)
+            {
+                System.out.print(" ");
+            }
+
+            for (int column = row; column >= 1; column--)
+            {
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+        for (int row = 1; row <= N; row++)
+        {
+            for (int spaces = 1  ; spaces <= N - row; spaces++)
+            {
+                System.out.print(" ");
+            }
+
+            for (int column = 1; column <= row; column++)
+            {
+                System.out.print(" *");
+            }
+
+            System.out.println();
+        }
+
     }
 
 
