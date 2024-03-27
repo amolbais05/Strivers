@@ -4,7 +4,7 @@ public class Patterns
 {
     public static void main(String[] args)
     {
-        tweleve();
+        thirteen();
     }
 
     /**
@@ -311,7 +311,40 @@ public class Patterns
 
             System.out.println();
         }
+    }
 
+    /**
+     *          *
+     *         * *
+     *        *   *
+     *       *     *
+     *      *********
+     *
+     * **/
+    public static void thirteen()
+    {
+        int N = 5;
+        for (int row = 1; row <= N ; row++)
+        {
+            for (int space = 0; space <= (N - row); space++)
+            {
+                System.out.print(" ");
+            }
+            for (int coulmn = 1; coulmn <= (2 * row - 1); coulmn++)
+            {
+
+                if (coulmn == 1 || row == N || coulmn == (2 * row - 1))
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+
+            }
+            System.out.println();
+        }
     }
 
 
