@@ -4,7 +4,7 @@ public class Patterns
 {
     public static void main(String[] args)
     {
-        sixteen();
+        pattern18();
     }
 
     /**
@@ -473,6 +473,80 @@ public class Patterns
             }
             System.out.println();
 
+        }
+    }
+
+    /**
+     *          1
+     *         212
+     *        32123
+     *       4321234
+     *        32123
+     *         212
+     *          1
+     *
+     * */
+    public static void pattern17()
+    {
+        int N = 4;
+        for (int row = 1; row <= 2 * N - 1; row++)
+        {
+
+            int num = row <= N ? row : 2 * N - row;
+
+            for (int space = 1; space <= N - num; space++)
+            {
+                System.out.print("  ");
+            }
+            for (int column = num; column >= 1; column--)
+            {
+                System.out.print(column + " ");
+            }
+            for (int column = 2 ; column <= num ; column++)
+            {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pattern18()
+    {
+        int size = 5;
+        // Upper half
+        for (int row = 1; row <= size; row++)
+        {
+            for (int col = 1; col <= size - row  + 1; col++)
+            {
+                System.out.print("*");
+            }
+            for (int space = 0; space < 2 * row - 2; space++)
+            {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= size - row + 1; col++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Lower half
+        for (int row = 1; row <= size ; row++)
+        {
+            for (int col = 1; col <= row ; col++)
+            {
+                System.out.print("*");
+            }
+            for (int space = 1; space <= 2 * (size - row); space++)
+            {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= row; col++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
 
