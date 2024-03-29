@@ -14,7 +14,7 @@ public class Patterns
      *     *****
      *     *****
      * **/
-    public static void one()
+    public static void pattern1()
     {
         for (int i = 0; i < 5; i++)
         {
@@ -30,7 +30,7 @@ public class Patterns
      *     *****
      *
      * **/
-    public static void two()
+    public static void pattern2()
     {
         for (int row = 0 ; row <= 5 ; row++)
         {
@@ -50,7 +50,7 @@ public class Patterns
      *     *
      **/
 
-    public static void three()
+    public static void pattern3()
     {
         for (int row = 5; row >= 0; row--)
         {
@@ -70,7 +70,7 @@ public class Patterns
      *     1 2 3 4 5
      **/
 
-    public static void four()
+    public static void pattern4()
     {
         for (int row = 1; row <= 5; row++)
         {
@@ -94,7 +94,7 @@ public class Patterns
      *     *
      **/
     
-    public static void five()
+    public static void pattern5()
     {
         for (int row = 0; row < 10; row++)
         {
@@ -118,7 +118,7 @@ public class Patterns
      *       ****
      *      *****
      **/
-    public static void six()
+    public static void pattern6()
     {
         int N = 5;
         for (int row = 1; row <= N; row++)
@@ -143,7 +143,7 @@ public class Patterns
      *         **
      *          *
      **/
-    public static void seven()
+    public static void pattern7()
     {
         int N = 5;
         for (int row = N; row >= 0; row--)
@@ -167,7 +167,7 @@ public class Patterns
      *      *******
      *     *********
      **/
-    public static void eight()
+    public static void pattern8()
     {
         int N = 5;
         for (int row = 1; row <= N; row++)
@@ -193,7 +193,7 @@ public class Patterns
      *        ***
      *         *
      **/
-    public static void nine()
+    public static void pattern9()
     {
         int N = 6;
         for (int row = N; row >= 1; row--)
@@ -218,7 +218,7 @@ public class Patterns
      *       * * * *
      *      * * * * *
      **/
-    public static void ten()
+    public static void pattern10()
     {
         int N = 6;
 
@@ -246,7 +246,7 @@ public class Patterns
      *          *
      *          *
      * */
-    public static void eleven()
+    public static void pattern11()
     {
         int N = 6;
 
@@ -279,7 +279,7 @@ public class Patterns
      *      * * * * *
      * */
 
-    public static void tweleve()
+    public static void pattern12()
     {
         int N = 6;
 
@@ -321,7 +321,7 @@ public class Patterns
      *      *********
      *
      * **/
-    public static void thirteen()
+    public static void pattern13()
     {
         int N = 5;
         for (int row = 1; row <= N ; row++)
@@ -355,7 +355,7 @@ public class Patterns
      *          *
      *
      * **/
-    public static void fourteen()
+    public static void pattern14()
     {
         int N = 5;
         for (int row = N; row >= 1 ; row--)
@@ -392,7 +392,7 @@ public class Patterns
      *          *
      *
      * **/
-    public static void fifteen()
+    public static void pattern15()
     {
         int N = 5;
         for (int row = 1; row <= N ; row++)
@@ -448,7 +448,7 @@ public class Patterns
     *
     * */
 
-    public static void sixteen()
+    public static void pattern16()
     {
         int N = 5;
         int[][] triangle = new int[N][N];
