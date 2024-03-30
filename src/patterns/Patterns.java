@@ -4,7 +4,7 @@ public class Patterns
 {
     public static void main(String[] args)
     {
-        pattern18();
+        pattern28();
     }
 
     /**
@@ -510,6 +510,19 @@ public class Patterns
         }
     }
 
+    /**
+     *       **********
+     *       ****  ****
+     *       ***    ***
+     *       **      **
+     *       *        *
+     *       *        *
+     *       **      **
+     *       ***    ***
+     *       ****  ****
+     *       **********
+     *
+     * **/
     public static void pattern18()
     {
         int size = 5;
@@ -545,6 +558,296 @@ public class Patterns
             for (int col = 1; col <= row; col++)
             {
                 System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *        *        *
+     *        **      **
+     *        ***    ***
+     *        ****  ****
+     *        **********
+     *        ****  ****
+     *        ***    ***
+     *        **      **
+     *        *        *
+     *
+     * **/
+    public static void pattern19()
+    {
+        int size = 5;
+        // Upper half
+        for (int row = 1; row <= size; row++)
+        {
+            for (int col = 1; col <= row; col++)
+            {
+                System.out.print("*");
+            }
+            for (int space = 1; space <= 2 * (size - row) ; space++)
+            {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= row; col++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Lower half
+        for (int row = 1; row <= size ; row++)
+        {
+            for (int col = 1; col <= size - row + 1 ; col++)
+            {
+                System.out.print("*");
+            }
+            for (int space = 1; space <= 2 * row - 2; space++)
+            {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= size - row + 1; col++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *        ****
+     *        *  *
+     *        *  *
+     *        *  *
+     *        ****
+     * **/
+    public static void pattern20()
+    {
+        int size = 5;
+        for (int row = 1; row <= 5; row++)
+        {
+            for (int col = 1; col < size; col++)
+            {
+                if ((row == 1 || row == 5) || (col == 1 || col == (size -1)))
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    
+    /**
+     *        1
+     *        2  3
+     *        4  5  6
+     *        7  8  9  10
+     *        11 12 13 14 15
+     * **/
+    public static void pattern21()
+    {
+        int count = 1;
+        int size = 6;
+        for (int row = 1; row <= size ; row++)
+        {
+            for (int col = 1; col <= row ; col++)
+            {
+                System.out.print(count++ +" ");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *        1
+     *        0 1
+     *        1 0 1
+     *        0 1 0 1
+     *        1 0 1 0 1
+     * **/
+    public static void pattern22()
+    {
+        int size = 5;
+        int print = 0;
+        for (int row = 1; row <= size ; row++)
+        {
+            for (int col = 1; col <= row ; col++)
+            {
+                //print = 1 - print;
+                print ^= 1;
+                System.out.print(print + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *            *      *
+     *          *   *  *   *
+     *        *      *      *
+     * **/
+    public static void pattern23()
+    {
+        int size = 3;
+        for (int row = 1; row <= size ; row++)
+        {
+            for (int space = 0; space <= size - row ; space++)
+            {
+                System.out.print("-");
+            }
+            for (int col = 1; col <= row ; col++)
+            {
+                System.out.print("*");
+
+                for (int space = 0; space <= col ; space++)
+                {
+                    System.out.print("-");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
+
+    /**
+     *        *        *
+     *        **      **
+     *        * *    * *
+     *        *  *  *  *
+     *        *   **   *
+     *        *   **   *
+     *        *  *  *  *
+     *        * *    * *
+     *        **      **
+     *        *        *
+     * **/
+    public static void pattern24()
+    {
+        int size = 5;
+        // Upper half
+        for (int row = 1; row <= size; row++)
+        {
+            for (int col = 1; col <= row; col++)
+            {
+                if (col == 1 || col == row)
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+            }
+            for (int space = 1; space <= 2 * (size - row) ; space++)
+            {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= row; col++)
+            {
+                if (col == row || col == 1)
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+        // Lower half
+        for (int row = 1; row <= size ; row++)
+        {
+            for (int col = 1; col <= size - row + 1 ; col++)
+            {
+                if (col == 1 || col == (size - row + 1))
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+            }
+            for (int space = 1; space <= 2 * row - 2; space++)
+            {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= size - row + 1; col++)
+            {
+                if (col == 1 || col == (size - row + 1))
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *          *
+     *         * *
+     *        * * *
+     *       * * * *
+     *      * * * * *
+     *       * * * *
+     *        * * *
+     *         * *
+     *          *
+     * **/
+    public static void pattern28()
+    {
+        int size = 4;
+
+        for (int row = 1; row <= (size * 2) + 1  ; row++)
+        {
+            for (int space = 1; space <= ; space++)
+            {
+                System.out.print(" ");
+            }
+            for (int star = 1; star <= row; star++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+
+    /**
+     *        1      1
+     *        12    21
+     *        123  321
+     *        12344321
+     * **/
+    public static void pattern35()
+    {
+        int size = 5;
+        for (int row = 1; row <= size; row++)
+        {
+            for (int col = 1; col <= row; col++)
+            {
+                System.out.print(col);
+            }
+            for (int space = 1; space <= 2 * (size - row) ; space++)
+            {
+                System.out.print(" ");
+            }
+            for (int col = row; col >= 1; col--)
+            {
+                System.out.print(col);
             }
             System.out.println();
         }
