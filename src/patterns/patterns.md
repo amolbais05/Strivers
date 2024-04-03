@@ -268,4 +268,45 @@ Pattern Questions
        12    21
        123  321
        12344321
+       
+36.   
+      1
+      22
+      333
+      4444
+      55555
+
+37.
+      12345
+      1234
+      123
+      12
+      1
+38.
+    A
+    AB
+    ABC
+    ABCD
+    ABCDE
+ 
+39.
+    ABCDE
+    ABCD
+    ABC
+    AB
+    A
+
+40.
+     A
+     BB
+     CCC
+     DDDD
+     EEEEE
+     
+41.
+      A
+     ABA
+    ABCBA
+   ABCDCBA        
+                         
 ```

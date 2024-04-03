@@ -2,11 +2,6 @@ package patterns;
 
 public class Patterns
 {
-    public static void main(String[] args)
-    {
-        pattern34();
-    }
-
     /**
      *     *****
      *     *****
@@ -1006,6 +1001,35 @@ public class Patterns
     }
 
     /**
+     *          4 4 4 4 4 4 4
+     *          4 3 3 3 3 3 4
+     *          4 3 2 2 2 3 4
+     *          4 3 2 1 2 3 4
+     *          4 3 2 2 2 3 4
+     *          4 3 3 3 3 3 4
+     *          4 4 4 4 4 4 4
+     * */
+    public static void pattern31()
+    {
+        int N = 4;
+        for (int row = 0; row < (2 * N) - 1; row++)
+        {
+            for (int column = 0; column < (2 * N) - 1; column++)
+            {
+                int top = row;
+                int left = column;
+                int right = (2 * N - 2) - row;
+                int bottom = (2 * N - 2) - column;
+
+                int number = N - (Math.min(Math.min(top, left), Math.min(right, bottom)));
+
+                System.out.print(number + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
      *
      *        E
      *        D E
@@ -1108,6 +1132,149 @@ public class Patterns
             System.out.println();
         }
     }
+
+    /**
+     *       1
+     *       22
+     *       333
+     *       4444
+     *       55555
+     *
+     * */
+    public static void pattern36()
+    {
+        int size = 5;
+        for (int row = 1; row <= size ; row++)
+        {
+            for (int column = 1 ; column <= row; column++)
+            {
+                System.out.print(row + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *       12345
+     *       1234
+     *       123
+     *       12
+     *       1
+     * */
+    public static void pattern37()
+    {
+        int N = 5;
+        for (int row = 0; row < N; row++)
+        {
+            for (int column = 1; column <= N - row ; column++)
+            {
+                System.out.print(column);
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *     A
+     *     AB
+     *     ABC
+     *     ABCD
+     *     ABCDE
+     *
+     * */
+    public static void pattern38()
+    {
+        int N = 5;
+        for (int row = 1; row <= N; row++)
+        {
+            char startChar = 'A';
+            for (int column = 1; column <= row ; column++)
+            {
+                System.out.print(startChar++);
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *     ABCDE
+     *     ABCD
+     *     ABC
+     *     AB
+     *     A
+     * */
+    public static void pattern39()
+    {
+        int N = 5;
+        for (int row = 0; row < N; row++)
+        {
+            char startChar = 'A';
+            for (int column = 0; column < N - row ; column++)
+            {
+                System.out.print(startChar++);
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *     A
+     *     BB
+     *     CCC
+     *     DDDD
+     *     EEEEE
+     *
+     * */
+    public static void pattern40()
+    {
+        int N = 5;
+        char startChar = 'A';
+        for (int row = 1; row <= N; row++)
+        {
+            for (int column = 1; column <= row ; column++)
+            {
+                System.out.print(startChar);
+            }
+            startChar++;
+            System.out.println();
+        }
+    }
+    /**
+     *       A
+     *      ABA
+     *     ABCBA
+     *    ABCDCBA
+     * */
+
+    public static void pattern41()
+    {
+        int N = 4;
+        for (int row = 0; row < N; row++)
+        {
+            for (int space = 0 ; space < N - row - 1; space++)
+            {
+                System.out.print(" ");
+            }
+
+            for (int ch = 0; ch <= row; ch++)
+            {
+                System.out.print((char)('A' + ch));
+            }
+
+            for (int ch = row - 1; ch >= 0 ; ch--)
+            {
+                System.out.print((char)('A' + ch));
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        pattern41();
+    }
+
+
 
 
 }
