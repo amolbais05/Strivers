@@ -4,7 +4,7 @@ public class Patterns
 {
     public static void main(String[] args)
     {
-        pattern28();
+        pattern34();
     }
 
     /**
@@ -797,6 +797,104 @@ public class Patterns
     }
 
     /**
+     *           *****
+     *          *   *
+     *         *   *
+     *        *   *
+     *       *****
+     *
+     * */
+    public static void pattern25()
+    {
+        int size = 5;
+        for (int row = 1; row <= size; row++)
+        {
+            for (int space = 1; space <= size - row; space++)
+            {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= size; col++)
+            {
+                if ((row == 1 || row == size) || (col == 1 || col == size))
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *       1 1 1 1 1 1
+     *       2 2 2 2 2
+     *       3 3 3 3
+     *       4 4 4
+     *       5 5
+     *       6
+     *
+     * */
+    public static void pattern26()
+    {
+        int N = 6;
+        int count = 1;
+        for (int row = 0; row < N ; row++)
+        {
+            for (int column = 1; column <= N - row; column++)
+            {
+                System.out.print(count + " ");
+            }
+            count++;
+            System.out.println();
+        }
+    }
+
+    /**
+     *       1 2 3 4  17 18 19 20
+     *         5 6 7  14 15 16
+     *           8 9  12 13
+     *             10 11
+     * */
+    public static void pattern27()
+    {
+        int N = 4;
+        int firstHalf = 1;
+        int secondHalf = (N * N) + 1;
+        int numOfSpaces = 0;
+
+        for (int row = N; row >= 1; row--)
+        {
+            // space
+            for (int space = numOfSpaces; space >= 1; space--)
+            {
+                System.out.print(" ");
+            }
+
+            // first half
+            for (int firstHalfCounter = 1; firstHalfCounter <= row; firstHalfCounter++)
+            {
+                System.out.print((firstHalf++) + " ");
+            }
+
+            // second half
+            for (int secondHalfCounter = 1; secondHalfCounter <= row; secondHalfCounter++)
+            {
+                System.out.print((secondHalf++) + " ");
+            }
+
+            System.out.println();
+            numOfSpaces += 2;
+
+            secondHalf = (secondHalf - 1) - ((row - 1) * 2);
+        }
+    }
+
+
+
+    /**
      *          *
      *         * *
      *        * * *
@@ -813,7 +911,7 @@ public class Patterns
 
         for (int row = 1; row <= (size * 2) + 1  ; row++)
         {
-            for (int space = 1; space <= ; space++)
+            for (int space = 1; space <= row; space++)
             {
                 System.out.print(" ");
             }
@@ -824,6 +922,164 @@ public class Patterns
             System.out.println();
         }
 
+    }
+
+    /**
+     *        *        *
+     *        **      **
+     *        ***    ***
+     *        ****  ****
+     *        **********
+     *        ****  ****
+     *        ***    ***
+     *        **      **
+     *        *        *
+     *
+     * **/
+    public static void pattern29()
+    {
+        int size = 5;
+        // Upper half
+        for (int row = 1; row <= size; row++)
+        {
+            for (int col = 1; col <= row; col++)
+            {
+                System.out.print("*");
+            }
+            for (int space = 1; space <= 2 * (size - row) ; space++)
+            {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= row; col++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // Lower half
+        for (int row = 1; row <= size ; row++)
+        {
+            for (int col = 1; col <= size - row + 1 ; col++)
+            {
+                System.out.print("*");
+            }
+            for (int space = 1; space <= 2 * row - 2; space++)
+            {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= size - row + 1; col++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *             1
+     *           2 1 2
+     *         3 2 1 2 3
+     *       4 3 2 1 2 3 4
+     *     5 4 3 2 1 2 3 4 5
+     *
+     * **/
+    public static void pattern30()
+    {
+        int size = 5;
+        for (int row = 1 ; row <= size ; row++)
+        {
+            for (int space = 1; space <= size - row; space++)
+            {
+                System.out.print(" ");
+            }
+            for (int column = row; column >= 1; column--)
+            {
+                System.out.print(column + " ");
+            }
+            for (int column = 2; column <= row ; column++)
+            {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *
+     *        E
+     *        D E
+     *        C D E
+     *        B C D E
+     *        A B C D E
+     * */
+    public static void pattern32()
+    {
+        int N = 5;
+        for (int row = 0; row < N; row++)
+        {
+            char currentChar = 'E';
+            for (int column = 0; column <= row ; column++)
+            {
+                System.out.print(currentChar + " ");
+                currentChar--;
+            }
+            System.out.println();
+        }
+    }
+    /**
+     *
+     *        a
+     *        B c
+     *        D e F
+     *        g H i J
+     *        k L m N o
+     *
+     * **/
+    public static void pattern33()
+    {
+        int N = 5;
+        char currentChar = 'a';
+        boolean upperCase = false;
+        for (int row = 0; row < N; row++)
+        {
+            for (int column = 0; column <= row ; column++)
+            {
+                if (upperCase)
+                {
+                    System.out.print(Character.toUpperCase(currentChar) + " ");
+                }
+                else
+                {
+                    System.out.print(currentChar + " ");
+                }
+                currentChar++;
+                upperCase = !upperCase;
+            }
+            System.out.println();
+        }
+    }
+    /**
+     *        E D C B A
+     *        D C B A
+     *        C B A
+     *        B A
+     *        A
+     * */
+    public static void pattern34()
+    {
+        int N = 5;
+        char startChar = 'E';
+        for (int row = 0 ; row < N; row++)
+        {
+            char printChar = startChar;
+            for (int column = 1; column <= N - row ; column++)
+            {
+                System.out.print((printChar--) + " ");
+            }
+            System.out.println();
+            startChar--;
+        }
     }
 
     /**
