@@ -10,6 +10,7 @@ public class SumOfNaturalNumbers
         System.out.println(optimalApproach(10));
         recursiveParameterizedApproach(10, 0);
         System.out.println(recursiveFunctionalApproach(10));
+        System.out.println(javaStream(10));
 
     }
 
@@ -43,8 +44,18 @@ public class SumOfNaturalNumbers
 
     private static int naiveApproach(int num)
     {
-        return IntStream.rangeClosed(1, num).sum();
+        int sum = 0;
+        for (int i = 0; i <= num; i++)
+        {
+            sum += i;
+        }
+        return sum;
     } // TC : O(n)
+
+    private static int javaStream(int num)
+    {
+        return IntStream.rangeClosed(1, num).sum();
+    } // TC : O(1)
 
 
 
