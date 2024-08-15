@@ -30,3 +30,4 @@ replay_pid*
 out/production/Strivers/src.iml
 src/src.iml
 .idea/sonarlint/*
+/.idea
