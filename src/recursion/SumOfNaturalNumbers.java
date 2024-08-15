@@ -1,5 +1,7 @@
 package recursion;
 
+import java.util.stream.IntStream;
+
 public class SumOfNaturalNumbers
 {
     public static void main(String[] args)
@@ -41,12 +43,7 @@ public class SumOfNaturalNumbers
 
     private static int naiveApproach(int num)
     {
-        int sum = 0;
-        for (int i = 0; i <= num; i++)
-        {
-            sum += i;
-        }
-        return sum;
+        return IntStream.rangeClosed(1, num).sum();
     } // TC : O(n)
 
 
