@@ -2,6 +2,7 @@ package sorting;
 
 import java.util.stream.IntStream;
 
+
 public class Bubble
 {
 
@@ -55,6 +56,33 @@ public class Bubble
         return arr;
     }
     // O(N) when array is already sorted
-
     // Space Complexity: O(1)O(1)
+
+
+
+    public static void recursion(int arr[], int n)
+    {
+        if (n == 1)
+        {
+            return;
+        }
+        boolean flag = false;
+        for (int i = 0; i < n - 1; i++)
+        {
+            if (arr[i] < arr[i + 1])
+            {
+                int temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                flag = true;
+            }
+        }
+        if (!flag)
+        {
+            return;
+        }
+        recursion(arr, n - 1);
+    }
+
 }
+
