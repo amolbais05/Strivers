@@ -83,6 +83,8 @@ public class Bubble
         }
         recursion(arr, n - 1);
     }
+    // TC: O(N²)
+    // SC: O(N)
 
 }
 
