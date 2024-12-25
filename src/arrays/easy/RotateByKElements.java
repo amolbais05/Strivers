@@ -4,52 +4,49 @@ public class RotateByKElements
 {
     public static void main(String[] args)
     {
-        int arr[] = {1, 2, 3, 4, 5};
-        int k = 2;
+        int arr[] = {1,2,3,4,5,6,7};
+        int k = 3;
         bruteForce(arr, k);
-        System.out.println();
+        /*System.out.println();
 
         int arr2[] = {1, 2, 3, 4, 5};
-        optimal(arr2, k);
+        optimal(arr2, k);*/
     }
 
 
-    private static int[] bruteForce(int arr[], int k)
+    private static int[] bruteForce(int nums[], int k)
     {
-        int n = arr.length;
+        int n = nums.length;
         k = k % n;
         int[] temp = new int[k];
         for (int i = 0; i < k; i++)
         {
-            temp[i] = arr[i];
+            temp[i] = nums[n - k + i];
         }
-        for (int i = k; i < n; i++)
+        for (int i = n - 1; i >= k; i--)
         {
-            arr[i - k] = arr[i];
+            nums[i] = nums[i - k];
         }
-        for (int i = n - k; i < n; i++)
+        for (int i = 0; i < k; i++)
         {
-            arr[i] = temp[i - (n - k)];
+            nums[i] = temp[i];
         }
-        for (int i = 0; i < n; i++)
-        {
-            System.out.print(arr[i] + " ");
-        }
-        return arr;
+        return nums;
     }
 
-    private static int[] optimal(int arr[], int k)
+    private static int[] optimal(int nums[], int k)
     {
-        int n = arr.length;
+        int n = nums.length;
         k = k % n;
-        reverse(arr, 0, k - 1); // reverse first k elements
-        reverse(arr, k, n - 1); // reverse last n-k elements
-        reverse(arr, 0, n - 1); // reverse whole array
+        reverse(nums, 0, n - 1); // reverse whole array
+        reverse(nums, 0, k - 1); // reverse first k elements
+        reverse(nums, k, n - 1); // reverse remaining n-k elements
+
         for (int i = 0; i < n; i++)
         {
-            System.out.print(arr[i] + " ");
+            System.out.print(nums[i] + " ");
         }
-        return arr;
+        return nums;
     }
 
     private static void reverse(int arr[], int start, int end)
