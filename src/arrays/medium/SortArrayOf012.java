@@ -1,7 +1,5 @@
 package arrays.medium;
 
-import java.util.Arrays;
-
 public class SortArrayOf012
 {
     public static void main(String[] args)
