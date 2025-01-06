@@ -7,7 +7,6 @@ public class StockBuySell
         int arr[] = {7, 1, 5, 3, 6, 4};
         System.out.println(bruteForce(arr));
         System.out.println(better(arr));
-        //System.out.println(optimal(arr));
     }
 
 
