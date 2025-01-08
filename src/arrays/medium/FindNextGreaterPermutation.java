@@ -6,6 +6,9 @@ import java.util.List;
 
 public class FindNextGreaterPermutation
 {
+    // Better Solution : C++ STL Library
+
+
     public static List< Integer > nextGreaterPermutation(List< Integer > A) {
             int n = A.size(); // size of the array.
 
