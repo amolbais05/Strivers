@@ -6,9 +6,37 @@ import java.util.List;
 
 public class FindNextGreaterPermutation
 {
+    // Brute Force
+    // Approach:
+    /*
+    1. Generate all possible permutations of elements present in SORTED Order. permutation which is just larger than the given permutation.
+        (Need to use recursion)
+
+    2. Do Linear search to find the permutation that is just larger than the current permutation.
+
+    3. If we find a permutation just larger than the current one, print it.
+
+    4. If there doesn't exist a next permutation, then the first one will be the answer.
+
+     */
+
+
     // Better Solution : C++ STL Library
 
+    // Intuition behind optimal solution
+    /**
+    1. Longest prefix match, find the break point : a[i] < a[i+1]
 
+    2. find > A, the next greater element but smallest one from the right side. So that you stay close.
+     If break point does not exist: reverse the whole array.
+
+    3. Swap the break point and the smallest greater element.
+
+    4. Place the rest of the elements in the increasing order. (ascending order)
+
+    * */
+
+    // optimal
     public static List< Integer > nextGreaterPermutation(List< Integer > A) {
             int n = A.size(); // size of the array.
 
@@ -47,6 +75,8 @@ public class FindNextGreaterPermutation
 
             return A;
         }
+        // TC : O(N)
+        // SC : O(1)
 
         public static void main(String args[]) {
             List<Integer> A = Arrays.asList(new Integer[] {2, 1, 5, 4, 3, 0, 0});
@@ -61,7 +91,3 @@ public class FindNextGreaterPermutation
         }
 
     }
-
-
-
-}
