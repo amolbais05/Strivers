@@ -70,9 +70,7 @@ public class LongestConsecutiveSequence
         {
           return 0;
         }
-
         int longest = 1;
-
         Set<Integer> hashSet = new HashSet<>();
         for (int num : arr)
         {
