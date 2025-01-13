@@ -91,30 +91,31 @@ public class SetMatrixZero
     {
         int length = matrix.length;
         int col0 = 1;
-        // First pass to mark the rows and columns that need to be zeroed
+
+        // Step 1: Mark rows and columns that need to be zeroed
         for (int row = 0; row < length; row++)
         {
-            for (int column = 0; column < length; column++)
+            for (int column = 0; column < matrix[row].length; column++)
             {
                 if (matrix[row][column] == 0)
                 {
                     matrix[row][0] = 0;
-
                     if (column != 0)
                     {
                         matrix[0][column] = 0;
                     }
                     else
                     {
-                        col0 = 0;
+                        col0 = 0; // special case only if column is 0
                     }
                 }
+
             }
         }
-        // Second pass to zero out the marked rows and columns
+        // Step 2: Zero out the marked rows and columns
         for (int row = length - 1; row >= 0; row--)
         {
-            for (int column = length - 1; column >= 1; column--)
+            for (int column = matrix[row].length - 1; column >= 1; column--) // skip 0th column
             {
                 if (matrix[row][0] == 0 || matrix[0][column] == 0)
                 {
@@ -125,7 +126,9 @@ public class SetMatrixZero
             {
                 matrix[row][0] = 0;
             }
+
         }
+
         printMatrix(length, matrix);
     }
     // TC : O(2NM)
