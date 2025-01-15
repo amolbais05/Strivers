@@ -1,5 +1,7 @@
 package arrays.medium;
 
+import java.util.HashMap;
+
 public class CountSubarraySum
 {
     public static void main(String[] args)
@@ -60,9 +62,25 @@ public class CountSubarraySum
 
     private static int optimal(int[] nums, int target)
     {
-        int n = nums.length;
+        int prefixSum = 0;
         int count = 0;
+
+        HashMap<Integer, Integer> prefixSumFrequency = new HashMap<>();
+        prefixSumFrequency.put(0, 1);
+
+        for (int i : nums)
+        {
+            prefixSum += i;
+
+            if (prefixSumFrequency.containsKey(prefixSum - target))
+            {
+                count += prefixSumFrequency.get(prefixSum - target);
+            }
+            prefixSumFrequency.put(prefixSum, prefixSumFrequency.getOrDefault(prefixSum, 0) + 1);
+        }
 
         return count;
     }
+    // TC : O(N)
+    // SC : O(N)
 }
