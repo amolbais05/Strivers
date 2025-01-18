@@ -56,7 +56,7 @@ public class Bubble
         return arr;
     }
     // O(N) when array is already sorted
-    // Space Complexity: O(1)O(1)
+    // Space Complexity: O(1)
 
 
 

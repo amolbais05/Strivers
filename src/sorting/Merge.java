@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Merge
 {
+    // This is divide and conquer algorithm
     public static void main(String[] args)
     {
         int arr[] = {5, 4, 3, 2, 1, 1, 2};

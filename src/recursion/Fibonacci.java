@@ -35,7 +35,7 @@ public class Fibonacci
         {
             return n;
         }
-        return fib(n - 1) + fib(n -2);
+        return fib(n - 1) + fib(n - 2);
     }
     // TC : O (2^n)
     // SC : O (n)
