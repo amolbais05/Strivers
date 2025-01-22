@@ -37,7 +37,7 @@ public class FindNextGreaterPermutation
     * */
 
     // optimal
-    public static List< Integer > nextGreaterPermutation(List< Integer > A) {
+    public static List<Integer> nextGreaterPermutation(List<Integer> A) {
             int n = A.size(); // size of the array.
 
             // Step 1: Find the break point:
@@ -78,8 +78,8 @@ public class FindNextGreaterPermutation
         // TC : O(N)
         // SC : O(1)
 
-        public static void main(String args[]) {
-            List<Integer> A = Arrays.asList(new Integer[] {2, 1, 5, 4, 3, 0, 0});
+        public static void main(String[] args) {
+            List<Integer> A = Arrays.asList(2, 1, 5, 4, 3, 0, 0);
             List<Integer> ans = nextGreaterPermutation(A);
 
             System.out.print("The next permutation is: [");
