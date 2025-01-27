@@ -1,5 +1,6 @@
 package arrays.hard;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,6 +10,8 @@ public class PascalTriangle {
     public static void main(String[] args) {
         printPascalTriangle(5);
         System.out.println(nCr(5, 2));
+        System.out.println(getRow(3));
+        System.out.println(generate(3));
     }
 
     private static void printPascalTriangle(int n) {
@@ -48,6 +51,33 @@ public class PascalTriangle {
     }
     // TC : O(n)
     // SC : O(1)
+
+    // Given the row number n. Print the n-th row of Pascal?s triangle.
+    public static List<Long> getRow(int rowIndex) {
+        long ans = 1;
+        List<Long> ansRow = new ArrayList<>();
+        ansRow.add(1L);
+        for (int col = 1; col < rowIndex; col++) {
+            ans = ans * (rowIndex - col);
+            ans = ans / col;
+            ansRow.add(ans);
+        }
+        return ansRow;
+    }
+    // TC : O(n)
+    // SC : O(1)
+
+    // Given n, print pascal's triangle
+    public static List<List<Long>> generate(int numRows) {
+        List<List<Long>> ans = new ArrayList<>();
+        for (int row = 1; row <= numRows; row++)
+        {
+            ans.add(getRow(row));
+        }
+        return ans;
+    }
+        // TC : O(n^2)
+        //SC : O(1)
 }
 
 
