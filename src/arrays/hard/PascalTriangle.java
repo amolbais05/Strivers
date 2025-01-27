@@ -8,17 +8,16 @@ public class PascalTriangle {
 
     public static void main(String[] args) {
         printPascalTriangle(5);
+        System.out.println(nCr(5, 2));
     }
 
     private static void printPascalTriangle(int n) {
         int[][] pascalTriangle = new int[n][n];
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             pascalTriangle[i][0] = 1; // First column is always 1
             pascalTriangle[i][i] = 1; // Last Column is always 1
 
-            for (int j = 1; j < i; j++)
-            {
+            for (int j = 1; j < i; j++) {
                 pascalTriangle[i][j] = pascalTriangle[i - 1][j - 1] + pascalTriangle[i - 1][j];
             }
         }
@@ -34,8 +33,22 @@ public class PascalTriangle {
 
         System.out.println(listOfLists);
 
-        }
     }
+
+    // print Pascal's Triangle single element
+    private static long nCr(int row, int col) {
+        long res = 1;
+
+        // calculating nCr:
+        for (int i = 0; i < col; i++) {
+            res = res * (row - i);
+            res = res / (i + 1);
+        }
+        return res;
+    }
+    // TC : O(n)
+    // SC : O(1)
+}
 
 
 /**
