@@ -67,7 +67,9 @@ public class MajorityElements
     {
         int n = arr.length; //size of the array
 
-        int cnt1 = 0, cnt2 = 0; // counts
+        int cnt1 = 0;
+        int cnt2 = 0;
+
         int el1 = Integer.MIN_VALUE; // element 1
         int el2 = Integer.MIN_VALUE; // element 2
 
@@ -97,14 +99,15 @@ public class MajorityElements
 
         // Manually check if the stored elements in
         // el1 and el2 are the majority elements:
-        cnt1 = 0; cnt2 = 0;
+        cnt1 = 0;
+        cnt2 = 0;
         for (int i = 0; i < n; i++)
         {
             if (arr[i] == el1) cnt1++;
             if (arr[i] == el2) cnt2++;
         }
 
-        int mini = (int)(n / 3) + 1;
+        int mini = (n / 3) + 1;
         if (cnt1 >= mini) ls.add(el1);
         if (cnt2 >= mini) ls.add(el2);
 
@@ -113,6 +116,7 @@ public class MajorityElements
         //Collections.sort(ls); //TC --> O(2*log2) ~ O(1);
 
         return ls;
-
     }
+    // TC : O(n)
+    // SC : O(1)
 }
