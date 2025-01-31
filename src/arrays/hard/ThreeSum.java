@@ -35,22 +35,23 @@ public class ThreeSum {
 
     private static List<List<Integer>> better(int[] arr)
     {
+        Arrays.sort(arr); // Sort the array first to maintain order
         Set<List<Integer>> st = new HashSet<>();
+
         for (int i = 0; i < arr.length; i++)
         {
             Set<Integer> hashset = new HashSet<>();
             for (int j = i + 1; j < arr.length; j++)
             {
                 int third = -(arr[i] + arr[j]);
-                if (hashset.contains(third))
+                if (hashset.contains((Integer) third))
                 {
-                    List<Integer> temp = Arrays.asList(arr[i], arr[j], third);
-                    temp.sort(null);
-                    st.add(temp);
+                    st.add(Arrays.asList(arr[i], third, arr[j]));
                 }
-                hashset.add(arr[j]);
+                hashset.add((Integer) arr[j]);
             }
         }
+
         return new ArrayList<>(st);
     }
     // TC : O(n^2)
