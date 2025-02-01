@@ -9,7 +9,7 @@ public class CountNumberOfSubarraysWithGivenXorK
         int[] arr = {4, 2, 2, 6, 4};
         int k = 6;
         System.out.println(bruteForce(arr, k));
-        System.out.println(better(arr, k));
+        System.out.println(optimal(arr, k));
     }
 
     private static int bruteForce(int[] arr, int target)
