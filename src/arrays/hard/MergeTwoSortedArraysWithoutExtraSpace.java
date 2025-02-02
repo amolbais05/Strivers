@@ -1,5 +1,7 @@
 package arrays.hard;
 
+import java.util.Arrays;
+
 public class MergeTwoSortedArraysWithoutExtraSpace
 {
     public static void main(String[] args)
@@ -43,6 +45,39 @@ public class MergeTwoSortedArraysWithoutExtraSpace
     }
     // TC : O(n+m)
     // SC : O(n+m)
+
+    private static void better(int[] arr1, int[] arr2)
+    {
+        int n = arr1.length;
+        int m = arr2.length;
+        int left = n - 1;
+        int right = 0;
+
+        while (left < n && right < m)
+        {
+            if (arr1[left] > arr2[right])
+            {
+                swap(arr1[left], arr2[right]);
+                left--;
+                right++;
+            }
+            else
+            {
+                break;
+            }
+        }
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+    }
+    // TC : O(n+m) + O(nlogn) + O(mlogm)
+    // SC : O(1)
+
+    private static void swap(int a, int b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
 
 
 }
