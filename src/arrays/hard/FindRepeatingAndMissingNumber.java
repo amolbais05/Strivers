@@ -64,6 +64,42 @@ public class FindRepeatingAndMissingNumber
     // TC : O (n)
     // SC : O (1)
 
+    private static int[] findMissingAndDuplicateUsingXOR(int[] nums)
+    {
+        int xor = 0;
+        int n = nums.length;
+
+        // Step 1: XOR all numbers from 1 to n and all array elements
+        for (int i = 1; i <= n; i++) xor ^= i;
+        for (int num : nums) xor ^= num;
+
+        // Step 2: Find rightmost set bit (difference identifier)
+        int diffBit = xor & -xor;
+
+        // Step 3: Divide numbers into two groups & XOR separately
+        int xor1 = 0, xor2 = 0;
+        for (int num : nums)
+        {
+            if ((num & diffBit) == 0) xor1 ^= num;
+            else xor2 ^= num;
+        }
+        for (int i = 1; i <= n; i++)
+        {
+            if ((i & diffBit) == 0) xor1 ^= i;
+            else xor2 ^= i;
+        }
+
+        // Step 4: Identify missing & duplicate
+        for (int num : nums)
+        {
+            if (num == xor1) return new int[]{xor1, xor2}; // xor1 = duplicate
+        }
+        return new int[]{xor2, xor1}; // xor2 = duplicate
+    }
+    // TC : O (n)
+    // SC : O (1)
+
+
     private static int[] bruteForce(int[] nums)
     {
         int[] ans = new int[2];
