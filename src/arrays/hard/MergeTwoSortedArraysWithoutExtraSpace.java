@@ -53,11 +53,11 @@ public class MergeTwoSortedArraysWithoutExtraSpace
         int left = n - 1;
         int right = 0;
 
-        while (left < n && right < m)
+        while (left >= 0 && right < m)
         {
             if (arr1[left] > arr2[right])
             {
-                swap(arr1[left], arr2[right]);
+                swap(arr1, arr2, left, right);
                 left--;
                 right++;
             }
@@ -72,11 +72,11 @@ public class MergeTwoSortedArraysWithoutExtraSpace
     // TC : O(n+m) + O(nlogn) + O(mlogm)
     // SC : O(1)
 
-    private static void swap(int a, int b)
+    private static void swap(int[] arr1, int[] arr2, int index1, int index2)
     {
-        int temp = a;
-        a = b;
-        b = temp;
+        int temp = arr1[index1];
+        arr1[index1] = arr2[index2];
+        arr2[index2] = temp;
     }
 
 
