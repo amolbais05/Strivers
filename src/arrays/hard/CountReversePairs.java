@@ -2,6 +2,23 @@ package arrays.hard;
 
 import java.util.ArrayList;
 
+/**
+Problem Statement: Given an array of numbers, you need to return the count of reverse pairs.
+ Reverse Pairs are those pairs where i<j and arr[i]>2*arr[j].
+
+Example 1:
+Input: array[] = {1,3,2,3,1)
+Output : 2
+Explanation: The pairs are (3, 1) and (3, 1) as from both the pairs the condition arr[i] > 2*arr[j] is satisfied.
+
+Example 2:
+Input: array[] = {3,2,1,4}
+Output: 1
+Explaination: There is only 1 pair  ( 3 , 1 ) that satisfy the condition arr[i] > 2*arr[j]
+
+ *
+ * */
+
 public class CountReversePairs
 {
     public static void main(String[] args)
@@ -51,7 +68,8 @@ public class CountReversePairs
     {
         int right = mid + 1;
         int cnt = 0;
-        for (int i = low; i <= mid; i++) {
+        for (int i = low; i <= mid; i++)
+        {
             while (right <= high && arr[i] > 2 * arr[right]) right++;
             cnt += (right - (mid + 1));
         }
