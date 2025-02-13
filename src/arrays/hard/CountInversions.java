@@ -3,6 +3,13 @@ package arrays.hard;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+Problem Statement: Given an array of N integers, count the inversion of the array (using merge-sort).
+What is an inversion of an array? Definition: for all i & j < size of array, if i < j then you have to find pair (A[i],A[j]) such that A[j] < A[i].
+
+
+ * */
+
 public class CountInversions
 {
     public static void main(String[] args)
@@ -46,7 +53,7 @@ public class CountInversions
         }
         int mid = (low + high) / 2;
         count += mergeSort(arr, low, mid);
-        count +=mergeSort(arr, mid + 1, high);
+        count += mergeSort(arr, mid + 1, high);
         count += merge(arr, low, mid, high);
         return count;
     }
