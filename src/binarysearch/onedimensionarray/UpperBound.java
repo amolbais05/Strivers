@@ -1,4 +1,4 @@
-package binarysearch;
+package binarysearch.onedimensionarray;
 
 public class UpperBound
 {
