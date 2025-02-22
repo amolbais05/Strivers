@@ -86,7 +86,7 @@ public class SearchSingleElementInSorted
     // TC : O(n)
     // SC : O(1)
 
-    public int optimalBinarySearch(int[] nums)
+    private static int optimalBinarySearch(int[] nums)
     {
         int start = 0;
         int end = nums.length - 1;
