@@ -6,7 +6,7 @@ public class Sqrt
     {
         int n = 4;
         System.out.println(bruteForce(n));
-        System.out.println(optimal(n));
+        System.out.println(better(n));
     }
 
     private static int bruteForce(int n)
@@ -28,5 +28,12 @@ public class Sqrt
         return ans;
     }
     // TC : O(sqrt(n))
+    // SC : O(1)
+
+    private static int better(int n)
+    {
+        return (int) Math.sqrt(n);
+    }
+    // TC : O(1)
     // SC : O(1)
 }
