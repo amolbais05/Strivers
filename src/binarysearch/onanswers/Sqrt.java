@@ -7,6 +7,7 @@ public class Sqrt
         int n = 4;
         System.out.println(bruteForce(n));
         System.out.println(better(n));
+        System.out.println(optimal(n));
     }
 
     private static int bruteForce(int n)
@@ -35,5 +36,29 @@ public class Sqrt
         return (int) Math.sqrt(n);
     }
     // TC : O(1)
+    // SC : O(1)
+
+    private static int optimal(int n)
+    {
+        int start = 1;
+        int end = n;
+        int ans = 0;
+        while (start <= end)
+        {
+            int mid = start + (end - start) / 2;
+            long val = (long) mid * mid;
+            if (val <= (long) n)
+            {
+                ans = mid;
+                start = mid + 1;
+            }
+            else
+            {
+                end = mid - 1;
+            }
+        }
+        return ans;
+    }
+    // TC : O(log n)
     // SC : O(1)
 }
