@@ -33,7 +33,7 @@ public class KokoEatingBananas
     // TC : O(max(piles) * n)
     // SC : O(1)
 
-    public int optimal(int[] piles, int h) {
+    public static int optimal(int[] piles, int h) {
 
         int start = 1;
         int end = 1000000000;
@@ -55,7 +55,7 @@ public class KokoEatingBananas
     // TC : O(log(max(piles)) * n)
     // SC : O(1)
 
-    private int calculateTotalHour(int[] piles, int hour)
+    private static int calculateTotalHour(int[] piles, int hour)
     {
         int totalHour = 0;
         for (int pile : piles)
