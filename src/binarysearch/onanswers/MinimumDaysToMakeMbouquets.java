@@ -13,10 +13,16 @@ public class MinimumDaysToMakeMbouquets
         System.out.println(optimal(bloomDay, m, k));
     }
 
-    public static int optimal(int[] bloomDay, int m, int k) {
-
+    public static int optimal(int[] bloomDay, int m, int k)
+    {
+        int n = bloomDay.length;
         int minDays = -1;
-        int start = 0;
+        if ((m * k) > n)
+        {
+            return minDays;
+        }
+
+        int start = IntStream.of(bloomDay).min().getAsInt();
         int end = IntStream.of(bloomDay).max().getAsInt();
 
         while (start <= end)
