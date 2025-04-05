@@ -2,6 +2,10 @@ package binarysearch.onanswers;
 
 import java.util.stream.IntStream;
 
+// Same solution for
+// 1. Painter's Partition Problem
+// 2. Split Array Largest Sum
+
 public class BookAllocation
 {
     public static void main(String[] args)
