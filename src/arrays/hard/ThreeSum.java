@@ -44,14 +44,13 @@ public class ThreeSum {
             for (int j = i + 1; j < arr.length; j++)
             {
                 int third = -(arr[i] + arr[j]);
-                if (hashset.contains((Integer) third))
+                if (hashset.contains(third))
                 {
                     st.add(Arrays.asList(arr[i], third, arr[j]));
                 }
-                hashset.add((Integer) arr[j]);
+                hashset.add(arr[j]);
             }
         }
-
         return new ArrayList<>(st);
     }
     // TC : O(n^2)
