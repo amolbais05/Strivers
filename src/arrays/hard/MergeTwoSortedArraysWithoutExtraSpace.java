@@ -109,6 +109,8 @@ public class MergeTwoSortedArraysWithoutExtraSpace
                 {
                     swapIfGreater(arr1, arr1, left, right);
                 }
+                left++;
+                right++;
             }
             if (gap == 1)
             {
