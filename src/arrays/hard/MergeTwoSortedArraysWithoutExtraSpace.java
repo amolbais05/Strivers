@@ -10,7 +10,8 @@ public class MergeTwoSortedArraysWithoutExtraSpace
         int[] arr2 = {2, 3, 9};
 
         // print array from bruteforce using stream
-        System.out.println("Brute Force: " + java.util.Arrays.stream(bruteForce(arr1, arr2)).boxed().collect(java.util.stream.Collectors.toList()));
+        System.out.println("Brute Force: " +
+            java.util.Arrays.stream(bruteForce(arr1, arr2)).boxed().collect(java.util.stream.Collectors.toList()));
 
     }
 
@@ -30,7 +31,7 @@ public class MergeTwoSortedArraysWithoutExtraSpace
             }
             else
             {
-             arr3[k++] = arr2[j++];
+                arr3[k++] = arr2[j++];
             }
         }
         while (i < n)
@@ -79,5 +80,53 @@ public class MergeTwoSortedArraysWithoutExtraSpace
         arr2[index2] = temp;
     }
 
+    // using gap method
+    private static void optimal(int[] arr1, int[] arr2)
+    {
+        int n = arr1.length;
+        int m = arr2.length;
+        int len = n + m;
+        int gap = (len / 2) + (len % 2);
 
+        while (gap > 0)
+        {
+            int left = 0;
+            int right = left + gap;
+            while (right < len)
+            {
+                // arr1 and arr2
+                if (left < n && right >= n)
+                {
+                    swapIfGreater(arr1, arr2, left, right - n);
+                }
+                // arr2 and arr2
+                else if (left >= n)
+                {
+                    swapIfGreater(arr2, arr2, left - n, right - n);
+                }
+                // arr1 and arr1
+                else
+                {
+                    swapIfGreater(arr1, arr1, left, right);
+                }
+            }
+            if (gap == 1)
+            {
+                break;
+            }
+            gap = (gap / 2) + (gap % 2);
+        }
+    }
+    // TC : O(log2(n+m) * (n+m))
+    // SC : O(1)
+
+    private static void swapIfGreater(int[] arr1, int[] arr2, int index1, int index2)
+    {
+        if (arr1[index1] > arr2[index2])
+        {
+            int temp = arr1[index1];
+            arr1[index1] = arr2[index2];
+            arr2[index2] = temp;
+        }
+    }
 }
