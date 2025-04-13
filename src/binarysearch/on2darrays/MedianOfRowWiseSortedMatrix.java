@@ -8,7 +8,6 @@ public class MedianOfRowWiseSortedMatrix
     {
         int[][] arr = {{1, 3, 5}, {2, 6, 9}, {3, 6, 9}};
         System.out.println(bruteForce(arr));
-        System.out.println(optimal(arr));
     }
 
     private static int bruteForce(int[][] arr)
@@ -30,10 +29,4 @@ public class MedianOfRowWiseSortedMatrix
     // TC : O(n * m)
     // SC : O(n * m)
 
-    private static int optimal(int[][] arr)
-    {
-        
-
-
-    }
 }
