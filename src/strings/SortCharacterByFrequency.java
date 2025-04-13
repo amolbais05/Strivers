@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class SortCharacterByFrequency
 {
@@ -11,6 +12,7 @@ public class SortCharacterByFrequency
     {
         String s = "tree";
         System.out.println(frequencySort(s));
+        System.out.println(frequencySortProrityQueue(s));
     }
 
     private static String frequencySort(String s)
@@ -36,4 +38,31 @@ public class SortCharacterByFrequency
         // Step 4: Return the result string
         return result.toString();
     }
+    // TC : O(n + k log k)
+
+    private static String frequencySortProrityQueue(String s)
+    {
+        // Count character frequencies
+        HashMap<Character, Integer> freqMap = new HashMap<>();
+        for (char c : s.toCharArray())
+        {
+            freqMap.put(c, freqMap.getOrDefault(c, 0) + 1);
+        }
+
+        // Use a max heap (PriorityQueue) to sort chracters by frequency
+        PriorityQueue<Character> maxHeap = new PriorityQueue<>((a, b) -> freqMap.get(b) - freqMap.get(a));
+        maxHeap.addAll(freqMap.keySet());
+
+        // Build the result string
+        StringBuilder result = new StringBuilder();
+        while (!maxHeap.isEmpty())
+        {
+            char ch = maxHeap.poll();
+            result.append(String.valueOf(ch).repeat(freqMap.get(ch)));
+        }
+        return result.toString();
+    }
+    // TC : O(n + k log k)
+    // SC : O(n + k)
+
 }
