@@ -27,7 +27,7 @@ public class LongestCommonPrefix
         }
         return prefix;
     }
-    // TC = O(n)
+    // TC = O(n * m)
     // SC = O(1)
 
     private static String longestCommonPrefixBySort(String[] strs)
