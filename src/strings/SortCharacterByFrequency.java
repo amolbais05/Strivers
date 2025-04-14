@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
 
 public class SortCharacterByFrequency
@@ -64,5 +65,42 @@ public class SortCharacterByFrequency
     }
     // TC : O(n + k log k)
     // SC : O(n + k)
+
+    private static String frequencySortBucket(String s)
+    {
+        // Step 1: Count frequency
+        Map<Character, Integer> freqMap = new HashMap<>();
+        for (char c : s.toCharArray())
+        {
+            freqMap.put(c, freqMap.getOrDefault(c, 0) + 1);
+        }
+
+        // Step 2: Create buckets
+        // The max possible frequency is s.length()
+        List<Character>[] buckets = new List[s.length() + 1];
+        for (int i = 0; i <= s.length(); i++)
+        {
+            buckets[i] = new ArrayList<>();
+        }
+
+        for (Map.Entry<Character, Integer> entry : freqMap.entrySet())
+        {
+            buckets[entry.getValue()].add(entry.getKey());
+        }
+
+        // Step 3: Build result from buckets
+        StringBuilder result = new StringBuilder();
+        for (int i = s.length(); i >= 0; i--)
+        {
+            for (char c : buckets[i])
+            {
+                result.append(String.valueOf(c).repeat(i));
+            }
+        }
+        return result.toString();
+    }
+    // TC : O(n)
+    // SC : O(n)
+
 
 }
