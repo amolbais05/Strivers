@@ -55,7 +55,6 @@ public class StringToInteger
             i++;
         }
 
-
         return sign * ans;
 
 
