@@ -9,7 +9,7 @@ public class ArrayToLinkedList
         System.out.println(head.data);
     }
 
-    private static Node convertArrayToLinkedList(int[] arr)
+    public static Node convertArrayToLinkedList(int[] arr)
     {
         Node head = new Node(arr[0]);
         Node mover = head;
