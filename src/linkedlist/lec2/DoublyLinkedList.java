@@ -27,10 +27,24 @@ public class DoublyLinkedList
         }
     }
 
+    private static Node deleteHead(Node head)
+    {
+        if (head == null)
+        {
+         return head;
+        }
+        head = head.next;
+        head.prev = null;
+        return head;
+    }
+
     public static void main(String[] args)
     {
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToDoublyLinkedList(arr);
+
+        head = deleteHead(head);
+
         traverseDoublyLinkedList(head);
     }
 }
