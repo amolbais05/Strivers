@@ -29,7 +29,7 @@ public class DoublyLinkedList
 
     private static Node deleteHead(Node head)
     {
-        if (head == null)
+        if (head == null || head.next == null)
         {
          return head;
         }
