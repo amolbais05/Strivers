@@ -40,12 +40,29 @@ public class DoublyLinkedList
         return head;
     }
 
+    private static Node deleteTail(Node head)
+    {
+        if (head == null || head.next == null)
+        {
+            return head;
+        }
+        Node tail = head;
+
+        while (tail.next != null)
+        {
+            tail = tail.next;
+        }
+        tail.prev.next = null;
+        tail.prev = null;
+        return head;
+    }
+
     public static void main(String[] args)
     {
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToDoublyLinkedList(arr);
 
-        head = deleteHead(head);
+        head = deleteTail(head);
 
         traverseDoublyLinkedList(head);
     }
