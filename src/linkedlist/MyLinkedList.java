@@ -203,12 +203,9 @@ public class MyLinkedList
 
     public static Node insertAtPosition(Node head, int data, int position)
     {
-        if (head == null)
+        if (head == null || position <= 0)
         {
-            if (position == 0)
-            {
-                return new Node(data);
-            }
+           return head;
         }
         if (position == 1)
         {
@@ -231,13 +228,40 @@ public class MyLinkedList
         }
         return head;
     }
+    // TC = O(n)
+    // SC = O(1)
+
+    public static Node insertBeforeValue(Node head, int data, int value)
+    {
+        if (head == null)
+        {
+            return head;
+        }
+        if (head.data == value)
+        {
+            return new Node(data, head);
+        }
+        Node temp = head;
+        while (temp.next != null)
+        {
+            if (temp.next.data == value)
+            {
+                Node newNode = new Node(data, temp.next);
+                temp.next = newNode;
+                break;
+            }
+            temp = temp.next;
+        }
+        return head;
+    }
 
     public static void main(String[] args)
     {
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToLinkedList(arr);
 
-        head = insertAtPosition(head, 10, 5);
+
+        head = insertBeforeValue(head, 10, 5);
 
         traversal(head);
     }
