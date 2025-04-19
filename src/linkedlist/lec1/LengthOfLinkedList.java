@@ -1,8 +1,8 @@
-package linkedlist;
+package linkedlist.lec1;
 
-import static linkedlist.ArrayToLinkedList.convertArrayToLinkedList;
+import static linkedlist.lec1.ArrayToLinkedList.convertArrayToLinkedList;
 
-public class Traversal
+public class LengthOfLinkedList
 {
     public static void main(String[] args)
     {
@@ -11,10 +11,12 @@ public class Traversal
 
         Node temp = head;
 
+        int count = 0;
         while (temp != null)
         {
-            System.out.print(temp.data + " ");
             temp = temp.next;
+            count++;
         }
+        System.out.println("Length : " + count);
     }
 }

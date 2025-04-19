@@ -1,6 +1,4 @@
-package linkedlist;
-
-import static linkedlist.ArrayToLinkedList.convertArrayToLinkedList;
+package linkedlist.lec1;
 
 public class MyLinkedList
 {
@@ -246,8 +244,7 @@ public class MyLinkedList
         {
             if (temp.next.data == value)
             {
-                Node newNode = new Node(data, temp.next);
-                temp.next = newNode;
+                temp.next = new Node(data, temp.next);
                 break;
             }
             temp = temp.next;
@@ -258,7 +255,7 @@ public class MyLinkedList
     public static void main(String[] args)
     {
         int[] arr = {12, 4, 5, 6, 8};
-        Node head = convertArrayToLinkedList(arr);
+        Node head = ArrayToLinkedList.convertArrayToLinkedList(arr);
 
 
         head = insertBeforeValue(head, 10, 5);

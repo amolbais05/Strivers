@@ -1,6 +1,6 @@
-package linkedlist;
+package linkedlist.lec1;
 
-import static linkedlist.ArrayToLinkedList.convertArrayToLinkedList;
+import static linkedlist.lec1.ArrayToLinkedList.convertArrayToLinkedList;
 
 public class SearchAnElement
 {
