@@ -31,7 +31,7 @@ public class DoublyLinkedList
     {
         if (head == null || head.next == null)
         {
-         return head;
+            return head;
         }
         Node pre = head;
         head = head.next;
@@ -57,12 +57,58 @@ public class DoublyLinkedList
         return head;
     }
 
+    private static Node deleteAtPosition(Node head, int position)
+    {
+        if (head == null)
+        {
+            return head;
+        }
+
+        Node temp = head;
+        int count = 0;
+        while (temp != null)
+        {
+            count++;
+            if (count == position)
+            {
+                break;
+            }
+            temp = temp.next;
+        }
+
+        Node prev = temp.prev;
+        Node next = temp.next;
+
+        if (next == null && prev == null)
+        {
+            return null;
+        }
+        else if (prev == null)
+        {
+            return deleteHead(head);
+        }
+        else if (next == null)
+        {
+            return deleteTail(head);
+        }
+
+        prev.next = next;
+        next.prev = prev;
+
+        temp.next = null;
+        temp.prev = null;
+
+        return head;
+    }
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+
     public static void main(String[] args)
     {
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToDoublyLinkedList(arr);
 
-        head = deleteTail(head);
+        head = deleteAtPosition(head, 5);
 
         traverseDoublyLinkedList(head);
     }
