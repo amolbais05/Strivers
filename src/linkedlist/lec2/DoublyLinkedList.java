@@ -33,8 +33,10 @@ public class DoublyLinkedList
         {
          return head;
         }
+        Node pre = head;
         head = head.next;
         head.prev = null;
+        pre.next = null;
         return head;
     }
 
