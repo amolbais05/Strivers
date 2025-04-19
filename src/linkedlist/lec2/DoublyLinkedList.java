@@ -103,12 +103,30 @@ public class DoublyLinkedList
     // Time Complexity: O(n)
     // Space Complexity: O(1)
 
+    private static void deleteNode(Node temp)
+    {
+        Node prev = temp.prev;
+        Node next = temp.next;
+
+        if (next == null)
+        {
+            prev.next = null;
+            temp.prev = null;
+            return;
+        }
+        prev.next = next;
+        next.prev = prev;
+
+        temp.next = temp.prev = null;
+    }
+
+
     public static void main(String[] args)
     {
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToDoublyLinkedList(arr);
 
-        head = deleteAtPosition(head, 5);
+        deleteNode(head.next.next);
 
         traverseDoublyLinkedList(head);
     }
