@@ -209,7 +209,51 @@ public class DoublyLinkedList
     // Time Complexity: O(n)
     // Space Complexity: O(1)
 
-    
+    private static Node insertAfterKthElement(Node head, int data, int position)
+    {
+        if (head == null || position <= 0)
+        {
+            return head;
+        }
+        if (position == 1)
+        {
+            return insertAfterHead(head, data);
+        }
+
+        Node temp = head;
+        int count = 0;
+        while (temp != null)
+        {
+            count++;
+            if (count == position)
+            {
+                break;
+            }
+            temp = temp.next;
+        }
+
+        // If we reach end before position, do nothing
+        if (temp == null)
+        {
+            return head;
+        }
+
+        Node newNode = new Node(data);
+        Node nextNode = temp.next;
+
+        // insert after temp
+        temp.next = newNode;
+        newNode.prev = temp;
+        newNode.next = nextNode;
+
+        if (nextNode != null)
+        {
+            nextNode.prev = newNode;
+        }
+        return head;
+    }
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
 
 
     public static void main(String[] args)
@@ -217,7 +261,7 @@ public class DoublyLinkedList
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToDoublyLinkedList(arr);
 
-        head = insertBeforeKthElement(head, 100, 3);
+        head = insertAfterKthElement(head, 100, 1);
 
         traverseDoublyLinkedList(head);
     }
