@@ -177,12 +177,33 @@ public class MyLinkedList
 
     }
 
+    public static Node insertAtHead(Node head, int data)
+    {
+        return new Node(data, head);
+    }
+
+    public static Node insertAtTail(Node head, int data)
+    {
+        if (head == null)
+        {
+            return new Node(data);
+        }
+        Node temp = head;
+        while (temp.next != null)
+        {
+            temp = temp.next;
+        }
+        temp.next = new Node(data);
+        return head;
+    }
+
     public static void main(String[] args)
     {
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToLinkedList(arr);
 
         head = removeElement(head, 8);
+        head = insertAtTail(head, 200);
 
         traversal(head);
     }
