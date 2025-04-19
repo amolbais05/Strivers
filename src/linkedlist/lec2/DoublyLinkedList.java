@@ -255,13 +255,28 @@ public class DoublyLinkedList
     // Time Complexity: O(n)
     // Space Complexity: O(1)
 
+    private static void insertBeforeNode(Node node, int data)
+    {
+        Node prev = node.prev;
+        Node newNode = new Node(data, node, prev);
+        prev.next = newNode;
+        node.prev = newNode;
+    }
+
+    private static void insertAfterNode(Node node, int data)
+    {
+        Node next = node.next;
+        Node newNode = new Node(data, next, node);
+        node.next = newNode;
+        next.prev = newNode;
+    }
 
     public static void main(String[] args)
     {
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToDoublyLinkedList(arr);
 
-        head = insertAfterKthElement(head, 100, 1);
+        insertAfterNode(head.next.next, 100);
 
         traverseDoublyLinkedList(head);
     }
