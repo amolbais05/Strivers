@@ -110,25 +110,30 @@ public class MyLinkedList
         return head;
     }
 
-    public static Node deleteTarget2(Node head, int target) {
-        if (head == null || target <= 0) {
+    public static Node deleteTarget2(Node head, int target)
+    {
+        if (head == null || target <= 0)
+        {
             return head;
         }
 
-        if (target == 1) {
+        if (target == 1)
+        {
             return head.next;
         }
 
         int count = 1;
         Node current = head;
 
-        while (current != null && count < target - 1) {
+        while (current != null && count < target - 1)
+        {
             current = current.next;
             count++;
         }
 
         // If current is null or the next node is null, target is out of bounds
-        if (current == null || current.next == null) {
+        if (current == null || current.next == null)
+        {
             return head;
         }
 
@@ -136,7 +141,6 @@ public class MyLinkedList
 
         return head;
     }
-
 
 
     public boolean search(Node head, int target)
@@ -197,13 +201,43 @@ public class MyLinkedList
         return head;
     }
 
+    public static Node insertAtPosition(Node head, int data, int position)
+    {
+        if (head == null)
+        {
+            if (position == 0)
+            {
+                return new Node(data);
+            }
+        }
+        if (position == 1)
+        {
+            return new Node(data, head);
+        }
+
+        Node temp = head;
+        int count = 0;
+        while (temp != null)
+        {
+            count++;
+            if (count == position - 1)
+            {
+                Node newNode = new Node(data);
+                newNode.next = temp.next;
+                temp.next = newNode;
+                break;
+            }
+            temp = temp.next;
+        }
+        return head;
+    }
+
     public static void main(String[] args)
     {
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToLinkedList(arr);
 
-        head = removeElement(head, 8);
-        head = insertAtTail(head, 200);
+        head = insertAtPosition(head, 10, 5);
 
         traversal(head);
     }
