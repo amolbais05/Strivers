@@ -143,6 +143,22 @@ public class DoublyLinkedList
         return head;
     }
 
+    private static Node insertBeforeTail(Node head, int data)
+    {
+        Node newNode = new Node(data);
+        Node temp = head;
+        while (temp.next != null)
+        {
+            temp = temp.next;
+        }
+        Node prev = temp.prev;
+        prev.next = newNode;
+        newNode.prev = prev;
+        newNode.next = temp;
+        temp.prev = newNode;
+        return head;
+    }
+
     
 
 
@@ -151,7 +167,7 @@ public class DoublyLinkedList
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToDoublyLinkedList(arr);
 
-        head = insertAfterHead(head, 100);
+        head = insertBeforeTail(head, 100);
 
         traverseDoublyLinkedList(head);
     }
