@@ -159,6 +159,56 @@ public class DoublyLinkedList
         return head;
     }
 
+    private static Node insertAfterTail(Node head, int data)
+    {
+        Node newNode = new Node(data);
+        Node tail = head;
+
+        while (tail.next != null)
+        {
+            tail = tail.next;
+        }
+        tail.next = newNode;
+        newNode.prev = tail;
+        newNode.next = null;
+        return head;
+    }
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+
+    private static Node insertBeforeKthElement(Node head, int data, int position)
+    {
+        if (head == null || position <= 0)
+        {
+            return head;
+        }
+        if (position == 1)
+        {
+            return insertBeforeHead(head, data);
+        }
+        Node temp = head;
+        int count = 0;
+        while (temp != null)
+        {
+            count++;
+            if (count == position)
+            {
+                break;
+            }
+            temp = temp.next;
+        }
+
+        Node prev = temp.prev;
+        Node newNode = new Node(data);
+        prev.next = newNode;
+        newNode.prev = prev;
+        newNode.next = temp;
+        temp.prev = newNode;
+        return head;
+    }
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+
     
 
 
@@ -167,7 +217,7 @@ public class DoublyLinkedList
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToDoublyLinkedList(arr);
 
-        head = insertBeforeTail(head, 100);
+        head = insertBeforeKthElement(head, 100, 3);
 
         traverseDoublyLinkedList(head);
     }
