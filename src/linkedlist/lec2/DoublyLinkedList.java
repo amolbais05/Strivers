@@ -130,13 +130,28 @@ public class DoublyLinkedList
         return newNode; // new head is getting return from here
     }
 
+    private static Node insertAfterHead(Node head, int data)
+    {
+        Node newNode = new Node(data);
+        newNode.next = head.next;
+        head.next = newNode;
+        newNode.prev = head;
+        if (newNode.next != null)
+        {
+            newNode.next.prev = newNode;
+        }
+        return head;
+    }
+
+    
+
 
     public static void main(String[] args)
     {
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToDoublyLinkedList(arr);
 
-        head = insertBeforeHead(head, 100);
+        head = insertAfterHead(head, 100);
 
         traverseDoublyLinkedList(head);
     }
