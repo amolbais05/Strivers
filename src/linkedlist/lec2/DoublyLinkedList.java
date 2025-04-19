@@ -29,15 +29,20 @@ public class DoublyLinkedList
 
     private static Node deleteHead(Node head)
     {
-        if (head == null || head.next == null)
-        {
-            return head;
+        if (head == null) {
+            return null;
         }
-        Node pre = head;
-        head = head.next;
-        head.prev = null;
-        pre.next = null;
-        return head;
+
+        // Only one node
+        if (head.next == null) {
+            return null;
+        }
+
+        Node newHead = head.next;
+        newHead.prev = null;
+        head.next = null; // Unlink old head
+
+        return newHead;
     }
 
     private static Node deleteTail(Node head)
