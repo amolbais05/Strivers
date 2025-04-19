@@ -119,6 +119,16 @@ public class DoublyLinkedList
 
         temp.next = temp.prev = null;
     }
+    // Time Complexity: O(1)
+    // Space Complexity: O(1)
+
+    private static Node insertBeforeHead(Node head, int data)
+    {
+        Node newNode = new Node(data);
+        head.prev = newNode;
+        newNode.next = head;
+        return newNode; // new head is getting return from here
+    }
 
 
     public static void main(String[] args)
@@ -126,7 +136,7 @@ public class DoublyLinkedList
         int[] arr = {12, 4, 5, 6, 8};
         Node head = convertArrayToDoublyLinkedList(arr);
 
-        deleteNode(head.next.next);
+        head = insertBeforeHead(head, 100);
 
         traverseDoublyLinkedList(head);
     }
