@@ -21,10 +21,12 @@ public class AddTwoNumbers
             if (temp1 != null)
             {
                 sum += temp1.data;
+                temp1 = temp1.next;
             }
             if (temp2 != null)
             {
                 sum += temp2.data;
+                temp2 = temp2.next;
             }
 
             Node newNode = new Node(sum % 10);
@@ -32,14 +34,7 @@ public class AddTwoNumbers
             curr = curr.next;
 
             carry = sum / 10;
-            if (temp1 != null)
-            {
-                temp1 = temp1.next;
-            }
-            if (temp2 != null)
-            {
-                temp2 = temp2.next;
-            }
+
         }
 
         if (carry != 0)
