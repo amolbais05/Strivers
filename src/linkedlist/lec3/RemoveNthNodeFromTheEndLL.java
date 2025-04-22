@@ -39,31 +39,24 @@ public class RemoveNthNodeFromTheEndLL
 
     private static Node optimal(Node head, int n)
     {
-        if (head == null)
-        {
-            return head;
-        }
+        Node dummy = new Node(0);
+        dummy.next = head;
 
-        Node slow = head;
-        Node fast = head;
+        Node fast = dummy;
+        Node slow = dummy;
 
-        for (int i = 1; i <= n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             fast = fast.next;
         }
 
-        if (fast == null)
-        {
-            return head.next;
-        }
-
-        while (fast.next != null)
-        {
+        while (fast.next != null) {
+            fast = fast.next;
             slow = slow.next;
-            fast = fast.next;
         }
+
         slow.next = slow.next.next;
-        return head;
+
+        return dummy.next;
     }
     // TC : O (n)
     // SC : O (1)
