@@ -29,5 +29,9 @@ public class ReverseLL
         }
         return head;
     }
+    // TC : O (n)
+    // SC : O (n)
+
+    
 
 }
