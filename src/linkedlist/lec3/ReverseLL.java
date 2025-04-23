@@ -32,6 +32,29 @@ public class ReverseLL
     // TC : O (n)
     // SC : O (n)
 
+    private static Node better(Node head)
+    {
+        if (head == null || head.next == null)
+        {
+            return head;
+        }
+
+        Node temp = head;
+        Node prev = null;
+
+        while (temp != null)
+        {
+            Node front = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = front;
+        }
+
+        return prev;
+    }
+    // TC : O (N)
+    // SC : O (1)
+
     
 
 }
