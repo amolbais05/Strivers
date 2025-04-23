@@ -55,6 +55,23 @@ public class ReverseLL
     // TC : O (N)
     // SC : O (1)
 
+    private static Node reverseRecursive(Node head)
+    {
+        if (head == null || head.next == null)
+        {
+            return head;
+        }
+
+        Node newNode = reverseRecursive(head.next);
+        Node front = head.next;
+        front.next = head;
+        head.next = null;
+
+        return newNode;
+    }
+    // TC : O (N)
+    // SC : O (N)
+
     
 
 }
