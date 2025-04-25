@@ -2,9 +2,9 @@ package linkedlist.lec2;
 
 public class Node
 {
-    int data;
-    Node next;
-    Node prev;
+    public int data;
+    public Node next;
+    public Node prev;
 
     public Node(int data)
     {
