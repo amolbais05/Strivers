@@ -1,6 +1,8 @@
 package linkedlist.lec3;
 
+import linkedlist.lec1.ArrayToLinkedList;
 import linkedlist.lec1.Node;
+import linkedlist.lec1.Traversal;
 import java.util.Stack;
 
 public class ReverseLL
@@ -72,6 +74,23 @@ public class ReverseLL
     // TC : O (N)
     // SC : O (N)
 
+    public static void main(String[] args)
+    {
+        Node head = ArrayToLinkedList.convertArrayToLinkedList(new int[]{1, 3, 5, 7 ,9});
+        head = reverseRecursive(head);
+        printLL(head);
+    }
+
+
+    private static void printLL(Node head)
+    {
+        Node temp = head;
+        while (temp != null)
+        {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
     
 
 }
