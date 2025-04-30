@@ -105,7 +105,8 @@ public class RotateLinkedList
         tail.next = head;
 
         return newHead;
-
     }
+    // TC : O (N)
+    // SC : O (1)
 
 }
