@@ -2,7 +2,7 @@ package linkedlist.lec5;
 
 public class FlatteningLL
 {
-    public Node flatten(Node head)
+    public MyNode flatten(MyNode head)
     {
         if (head == null || head.next == null)
         {
@@ -12,7 +12,7 @@ public class FlatteningLL
     }
     // TC : O (N)
     // SC : O (1)
-    private Node merge(Node a, Node b)
+    private MyNode merge(MyNode a, MyNode b)
         {
             if (a == null)
             {
@@ -22,7 +22,7 @@ public class FlatteningLL
             {
                 return a;
             }
-            Node result;
+            MyNode result;
             if (a.data < b.data)
             {
                 result = a;
@@ -38,28 +38,29 @@ public class FlatteningLL
         }
 }
 
-    class Node {
+    class MyNode
+    {
         int data;
-        Node next;
-        Node child;
+        MyNode next;
+        MyNode child;
 
         // Constructors to initialize the
         // data, next, and child pointers
-        Node() {
+        MyNode() {
             data = 0;
             next = null;
             child = null;
         }
 
-        Node(int x) {
+        MyNode(int x) {
             data = x;
             next = null;
             child = null;
         }
 
-        Node(int x, Node nextNode, Node childNode) {
+        MyNode(int x, MyNode nextMyNode, MyNode childMyNode) {
             data = x;
-            next = nextNode;
-            child = childNode;
+            next = nextMyNode;
+            child = childMyNode;
         }
     }
