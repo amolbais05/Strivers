@@ -27,6 +27,8 @@ public class SortStack
             stack.push(val);
         }
     }
+    // TC = O(N^2)
+    // SC = O(N)
 
     public static void main(String[] args)
     {
