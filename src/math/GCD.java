@@ -16,4 +16,16 @@ public class GCD
 
     // Time Complexity: O(min(N1, N2))
     // Space Complexity: O(1)
+
+    public static int findGcdRecursive(int num1, int num2)
+    {
+        if (num2 == 0)
+        {
+            return num1;
+        }
+        return findGcdRecursive(num2, num1 % num2);
+    }
+    // Time Complexity: O(log(min(N1, N2)))
+    // Space Complexity: O(log(min(N1, N2)))
+
 }
