@@ -46,4 +46,16 @@ public class Factorial
     }
     // TC : O (n)
     // SC : O (1)
+
+    public static Long tailRecursion(int num, int fact)
+    {
+        if (num <= 1)
+        {
+            return (long) fact;
+        }
+        return tailRecursion(num -1, num * fact);
+    }
+    // TC : O (n)
+    // SC : O (n)
+    // Call it like tailRecursion(5, 1)
 }
