@@ -2,7 +2,7 @@ package recursion;
 
 public class SumOfDigit
 {
-    public static int sumOfDigit(int n)
+    private static int sumOfDigit(int n)
     {
         if (n == 0)
         {
@@ -12,6 +12,21 @@ public class SumOfDigit
     }
     // TC : O (log n)
     // SC : O (log n)
+
+
+
+    private static int sumOfDigitIterative(int n)
+    {
+        int sum = 0;
+        while (n > 0)
+        {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+    // TC : O (log n)
+    // SC : O (1)
 
     public static void main(String[] args)
     {
