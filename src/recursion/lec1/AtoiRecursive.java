@@ -34,7 +34,7 @@ public class AtoiRecursive
             return acc;
         }
 
-        int digit = s.charAt(index) - '0';
+        int digit = s.charAt(index) - '0'; // convert 'char' to 'int'
 
         // Check for overflow
         if (acc > (Integer.MAX_VALUE - digit) / 10)
