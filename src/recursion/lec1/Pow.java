@@ -30,11 +30,6 @@ public class Pow
 
     private static double power(double x, long n)
     {
-        if (n == 0)
-        {
-            return 1;
-        }
-
         double half = power(x, n / 2);
         if (n % 2 == 0)
         {
