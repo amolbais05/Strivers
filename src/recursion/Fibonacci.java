@@ -37,6 +37,6 @@ public class Fibonacci
         }
         return fib(n - 1) + fib(n - 2);
     }
-    // TC : O (2^n)
+    // TC : O (2^n) : because of bidirectional recursive call
     // SC : O (n)
 }
