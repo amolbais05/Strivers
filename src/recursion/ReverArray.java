@@ -31,9 +31,7 @@ public class ReverArray
         int right = arr.length - 1;
         while (left < right)
         {
-            int temp = arr[left];
-            arr[left] = arr[right];
-            arr[right] = temp;
+            swap(arr, left, right);
             left++;
             right--;
         }
@@ -48,12 +46,17 @@ public class ReverArray
         {
             return;
         }
-        int temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
+        swap(arr, start, end);
         recursive(arr, start + 1, end - 1);
         // TC : O (n)
         // SC : O (1)
+    }
+
+    private static void swap(int[] arr, int start, int end)
+    {
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
     }
 
 }
