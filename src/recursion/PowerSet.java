@@ -7,7 +7,7 @@ public class PowerSet
 {
     public static void main(String[] args)
     {
-        System.out.println(powerSetIterative(new int[]{1, 2, 3}));
+     //   System.out.println(powerSetIterative(new int[]{1, 2, 3}));
         List<List<Integer>> result = new ArrayList<>();
         powerSetRecursive(0, new int[]{1, 2, 3}, new ArrayList<>(), result);
 
