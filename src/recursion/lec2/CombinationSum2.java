@@ -1,0 +1,44 @@
+package recursion.lec2;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class CombinationSum2
+{
+    private static List<List<Integer>> combinationSum2(int[] candidates, int target)
+    {
+        List<List<Integer>> ans = new ArrayList<>();
+        Arrays.sort(candidates);
+        findCombination(0, candidates, target, ans, new ArrayList<>());
+        return ans;
+    }
+
+    private static void findCombination(int index, int[] candidates, int target, List<List<Integer>> ans, List<Integer> ds)
+    {
+        if (target == 0)
+        {
+            ans.add(new ArrayList<>(ds));
+            return;
+        }
+
+        for (int i = index; i < candidates.length; i++)
+        {
+            if (i > index && candidates[i] == candidates[i - 1])
+            {
+                continue;
+            }
+            if (candidates[i] > target)
+            {
+                break;
+            }
+
+            ds.add(candidates[i]);
+            findCombination(i + 1, candidates, target - candidates[i], ans, ds); // use i instead of index
+            ds.remove(ds.size() - 1);
+        }
+    }
+    // TC : O (2^n)
+    // SC : O (k * x)
+
+}
