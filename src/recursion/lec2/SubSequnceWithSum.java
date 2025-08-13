@@ -1,4 +1,4 @@
-package recursion;
+package recursion.lec2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,8 @@ public class SubSequnceWithSum
 
     }
 
-    private static void sumOfSubSubSequence(int[] arr, int index, int targetSum, int currentSum, List<List<Integer>> result, List<Integer> current)
+    private static void sumOfSubSubSequence(int[] arr, int index, int targetSum, int currentSum, List<List<Integer>> result,
+        List<Integer> current)
     {
         if (arr.length == index)
         {
