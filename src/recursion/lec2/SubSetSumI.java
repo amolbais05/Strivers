@@ -28,5 +28,6 @@ public class SubSetSumI
 
         // not pick the element
         subsetSum(index + 1, sum, arr, n, result);
-    }
+    } // TC : O (2^n)
+    // SC : O (n)
 }
