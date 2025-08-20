@@ -51,7 +51,7 @@ public class PrintAllPermutation
         {
             swap(nums, i, index);
             permute(index + 1, nums, ans);
-            swap(nums, i, index);
+            swap(nums, i, index); // Backtracking
         }
     }
 
