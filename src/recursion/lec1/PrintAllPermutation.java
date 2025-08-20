@@ -39,9 +39,9 @@ public class PrintAllPermutation
         if (index == nums.length)
         {
             List<Integer> ds = new ArrayList<>();
-            for (int i = 0; i < nums.length; i++)
+            for (int num : nums)
             {
-                ds.add(nums[i]);
+                ds.add(num);
             }
             ans.add(new ArrayList<>(ds));
             return;
