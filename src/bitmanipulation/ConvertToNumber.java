@@ -36,4 +36,6 @@ public class ConvertToNumber
         }
         return num;
     }
+    // TC : O(n)
+    // SC : O(1)
 }
