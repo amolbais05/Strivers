@@ -1,4 +1,4 @@
-package bitmanipulation;
+package bitmanipulation.lec1;
 
 public class ConvertToBinary
 {
