@@ -51,6 +51,11 @@ public class StackUsingArray
         return arr[top];
     }
 
+    public int size()
+    {
+        return top + 1;
+    }
+
     public void print()
     {
         for (int i = top; i >= 0; i--)
