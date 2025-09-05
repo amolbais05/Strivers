@@ -41,7 +41,7 @@ public class StackUsingArray
         return data;
     }
 
-    public int peek()
+    public int top()
     {
         if (isEmpty())
         {
@@ -72,7 +72,7 @@ public class StackUsingArray
 
         System.out.println(stack.pop());
         stack.print();
-        System.out.println(stack.peek());
+        System.out.println(stack.top());
         stack.print();
         System.out.println(stack.pop());
         System.out.println(stack.pop());
