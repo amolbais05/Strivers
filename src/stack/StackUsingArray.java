@@ -4,12 +4,12 @@ public class StackUsingArray
 {
     private int[] arr;
     private int top;
-    private int size;
+    private int capacity;
 
-    public StackUsingArray(int size)
+    public StackUsingArray(int capacity)
     {
-        this.size = size;
-        arr = new int[size];
+        this.capacity = capacity;
+        arr = new int[capacity];
         top = -1;
     }
 
@@ -18,35 +18,35 @@ public class StackUsingArray
         return top == -1;
     }
 
+    public boolean isFull()
+    {
+        return top == capacity - 1;
+    }
+
     public void push(int data)
     {
-        if (top == size - 1)
+        if (isFull())
         {
-            System.out.println("Stack is full");
-            return;
+            System.out.println("Stack overflow! Resizing...");
+            resize();
         }
-        top++;
-        arr[top] = data;
+        arr[++top] = data;
     }
 
     public int pop()
     {
         if (isEmpty())
         {
-            System.out.println("Stack is empty");
-            return -1;
+            throw new RuntimeException("Stack underflow! No elements to pop.");
         }
-        int data = arr[top];
-        top--;
-        return data;
+        return arr[top--];
     }
 
-    public int top()
+    public int peek()
     {
         if (isEmpty())
         {
-            System.out.println("Stack is empty");
-            return -1;
+            throw new RuntimeException("Stack is empty! Nothing to peek.");
         }
         return arr[top];
     }
@@ -54,6 +54,14 @@ public class StackUsingArray
     public int size()
     {
         return top + 1;
+    }
+
+    private void resize()
+    {
+        capacity = capacity * 2;
+        int[] newArr = new int[capacity];
+        System.arraycopy(arr, 0, newArr, 0, arr.length);
+        arr = newArr;
     }
 
     public void print()
@@ -67,21 +75,17 @@ public class StackUsingArray
 
     public static void main(String[] args)
     {
-        StackUsingArray stack = new StackUsingArray(5);
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-        stack.push(5);
+        StackUsingArray stack = new StackUsingArray(3);
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
         stack.print();
 
-        System.out.println(stack.pop());
+        stack.push(40); // Triggers resizing
         stack.print();
-        System.out.println(stack.top());
-        stack.print();
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
+
+        System.out.println("Peek: " + stack.peek());
+        System.out.println("Pop: " + stack.pop());
         stack.print();
     }
 }
