@@ -63,7 +63,7 @@ public class BinaryHeap
         int right = getRightChild(index);
         int smallest = index;
 
-        if (left < size && arr[left] < arr[index])
+        if (left < size && arr[left] < arr[smallest])
         {
             smallest = left;
         }
@@ -84,15 +84,14 @@ public class BinaryHeap
 
     public int extractMin()
     {
-        if (size == 0)
+        if (size <= 0)
         {
             return Integer.MAX_VALUE;
         }
-
+        
         if (size == 1)
         {
-            size--;
-            return arr[0];
+            return arr[--size];
         }
 
         int root = arr[0];
@@ -120,6 +119,10 @@ public class BinaryHeap
 
     public void deleteKey(int index)
     {
+        if (index < 0 || index >= size)
+        {
+            return;
+        }
         decreaseKey(index, Integer.MIN_VALUE);
         extractMin();
     }
