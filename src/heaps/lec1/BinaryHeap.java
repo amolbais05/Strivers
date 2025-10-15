@@ -1,4 +1,4 @@
-package heaps;
+package heaps.lec1;
 
 public class BinaryHeap
 {
@@ -88,7 +88,7 @@ public class BinaryHeap
         {
             return Integer.MAX_VALUE;
         }
-        
+
         if (size == 1)
         {
             return arr[--size];

@@ -1,4 +1,4 @@
-package heaps;
+package heaps.lec1;
 
 public class MaxHeap
 {
