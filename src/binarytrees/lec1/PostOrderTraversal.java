@@ -6,7 +6,7 @@ import java.util.List;
 public class PostOrderTraversal
 {
     // Left Right Root
-    public List<Integer> postorderTraversal(Node root)
+    public List<Integer> postorderTraversal(TreeNode root)
     {
 
         List<Integer> result = new ArrayList<>();
@@ -14,7 +14,7 @@ public class PostOrderTraversal
         return result;
     }
 
-    public void postOrder(Node root, List<Integer> result)
+    public void postOrder(TreeNode root, List<Integer> result)
     {
         if (root == null)
         {

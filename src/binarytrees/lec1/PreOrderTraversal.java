@@ -8,7 +8,7 @@ public class PreOrderTraversal
 {
     // Root Left Right
 
-    public List<Integer> preorderTraversal(Node root)
+    public List<Integer> preorderTraversal(TreeNode root)
     {
         List<Integer> result = new ArrayList<>();
         preOrder(root, result);
@@ -16,7 +16,7 @@ public class PreOrderTraversal
 
     }
 
-    public void preOrder(Node root, List<Integer> list)
+    public void preOrder(TreeNode root, List<Integer> list)
     {
         if (root == null)
         {

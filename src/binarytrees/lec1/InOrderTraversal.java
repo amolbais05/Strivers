@@ -6,7 +6,7 @@ import java.util.List;
 public class InOrderTraversal
 {
     // Left Root Right
-    public List<Integer> inorderTraversal(Node root)
+    public List<Integer> inorderTraversal(TreeNode root)
     {
 
         List<Integer> result = new ArrayList<>();
@@ -14,7 +14,7 @@ public class InOrderTraversal
         return result;
     }
 
-    public void inOrder(Node root, List<Integer> result)
+    public void inOrder(TreeNode root, List<Integer> result)
     {
         if (root == null)
         {
