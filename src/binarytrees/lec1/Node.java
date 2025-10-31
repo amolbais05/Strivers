@@ -2,13 +2,13 @@ package binarytrees.lec1;
 
 public class Node
 {
-    int data;
+    int val;
     Node left;
     Node right;
 
     public Node(int data)
     {
-        this.data = data;
+        this.val = data;
     }
 
     public static void main(String[] args)
