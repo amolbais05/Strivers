@@ -26,6 +26,8 @@ public class BoundaryTraversal
 
         return result;
     }
+    // TC : O(n)
+    // SC : O(n)
 
     private boolean isLeaf(TreeNode root)
     {
