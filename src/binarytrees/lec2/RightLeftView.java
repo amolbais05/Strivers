@@ -6,9 +6,9 @@ import binarytrees.lec1.TreeNode;
 
 public class RightLeftView
 {
-    // SC O(log2N
-    // TC O(log2N
-    
+    // SC O(n)
+    // TC O(n)
+
     public List<Integer> rightSideView(TreeNode root)
     {
 
