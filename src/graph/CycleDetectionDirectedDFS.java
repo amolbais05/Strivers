@@ -51,7 +51,9 @@ public class CycleDetectionDirectedDFS
 
         for (int[] e : edges)
         {
-            int u = e[0], v = e[1];
+            int u = e[0];
+            int v = e[1];
+
             adj.get(u).add(v);
         }
         return adj;
